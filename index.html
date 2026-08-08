@@ -140,14 +140,35 @@
             margin-bottom: 30px;
         }
 
+        .about-section {
+            display: flex;
+            align-items: stretch;
+            gap: 28px;
+            margin-bottom: 30px;
+        }
+
+        .about-section .accent-panel {
+            flex: 1;
+            margin-bottom: 0;
+        }
+
        .hero-profile-box {
     width: 100%;
     max-width: 340px;
-    margin: 0 auto 30px auto;
+    flex: 0 0 340px;
+    margin: 0;
     aspect-ratio: 4 / 5;
     overflow: hidden;
     border-radius: 12px;
 }
+
+        @media (min-width: 860px) {
+            .about-section {
+                width: calc(100% + 100px);
+                margin-left: -50px;
+                margin-right: -50px;
+            }
+        }
 
        .profile-img {
     width: 100%;
@@ -243,7 +264,8 @@
 
         @media (max-width: 768px) {
             .main-wrapper { padding: 20px 15px 40px 15px; }
-            .hero-profile-box { aspect-ratio: 4 / 5; max-width: 100%; }
+            .hero-profile-box { aspect-ratio: 4 / 5; max-width: 100%; flex: 1 1 auto; }
+            .about-section { flex-direction: column; gap: 20px; }
             .office-gallery { grid-template-columns: 1fr; }
             .gallery-img { height: 200px; }
             .price-item { flex-direction: column; gap: 4px; }
@@ -275,28 +297,32 @@
         </svg>
     </header>
 
-    <div class="hero-profile-box">
-        <img src="erik1.jpg"
-             alt="Hörömpöli Erik" 
-             class="profile-img">
-    </div>
+    <div class="about-section">
 
-    <div class="accent-panel">
-        
-        <h4 style="margin-bottom: 12px; font-size: 1.4rem;">Üdv, Hörömpöli Erik vagyok</h4>
-        
-        <p style="margin:0; text-align: justify;">
-            Szomatikus, test-orientált módszerekkel dolgozó terapeuta. </p>
-        <br>
-        <h3 style="font-size: 1.4rem;">Miben tudok segíteni?</h3>
-        
-        <ul class="help-list">
-            <li><strong>Traumafeldolgozás</strong> – Múltbeli megrázkódtatások, elakadások feloldása.</li>
-            <li><strong>Kapcsolati, párkapcsolati konfliktusok</strong> – Ismétlődő viták, nem működő kapcsolatok okainak felfedezése.</li>
-            <li><strong>Élethelyzeti nehézségek</strong> – Krízisek, veszteségek és gyász feldolgozása.</li>
-            <li><strong>Függőség</strong> – Káros minták és viselkedések kezelése.</li>
-            <li><strong>Szorongás</strong> – Túlgondolás és állandó aggodalom enyhítése.</li>
-        </ul>
+        <div class="hero-profile-box">
+            <img src="erik1.jpg"
+                 alt="Hörömpöli Erik" 
+                 class="profile-img">
+        </div>
+
+        <div class="accent-panel">
+            
+            <h4 style="margin-bottom: 12px; font-size: 1.4rem;">Üdv, Hörömpöli Erik vagyok</h4>
+            
+            <p style="margin:0; text-align: justify;">
+                Szomatikus, test-orientált módszerekkel dolgozó terapeuta. </p>
+            <br>
+            <h3 style="font-size: 1.4rem;">Miben tudok segíteni?</h3>
+            
+            <ul class="help-list">
+                <li><strong>Traumafeldolgozás</strong> – Múltbeli megrázkódtatások, elakadások feloldása.</li>
+                <li><strong>Kapcsolati, párkapcsolati konfliktusok</strong> – Ismétlődő viták, nem működő kapcsolatok okainak felfedezése.</li>
+                <li><strong>Élethelyzeti nehézségek</strong> – Krízisek, veszteségek és gyász feldolgozása.</li>
+                <li><strong>Függőség</strong> – Káros minták és viselkedések kezelése.</li>
+                <li><strong>Szorongás</strong> – Túlgondolás és állandó aggodalom enyhítése.</li>
+            </ul>
+        </div>
+
     </div>
 
     <div class="office-gallery">
