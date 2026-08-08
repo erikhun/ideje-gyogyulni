@@ -46,13 +46,83 @@
 
         .intro-block {
             text-align: center;
-            padding: 10px 10px 35px 10px;
+            padding: 56px 10px 42px 10px;
+        }
+
+        .title-wrap {
+            position: relative;
+            display: inline-block;
+        }
+
+        .title-highlight {
+            position: absolute;
+            left: -5%;
+            right: -5%;
+            top: 42%;
+            height: 52%;
+            background: var(--accent-soft);
+            border-radius: 60% 40% 55% 45% / 45% 60% 40% 55%;
+            transform: rotate(-1deg);
+            z-index: 0;
+        }
+
+        .title-highlight.echo {
+            background: rgba(96, 114, 100, 0.14);
+            border-radius: 45% 55% 60% 40% / 55% 40% 60% 45%;
+            transform: rotate(2deg) scale(1.04);
+            z-index: -1;
         }
 
         .main-title { 
-            font-size: 2.6rem; 
-            margin-bottom: 8px; 
+            position: relative;
+            z-index: 1;
+            font-size: 3rem; 
+            margin-bottom: 14px; 
             letter-spacing: -0.5px;
+        }
+
+        .intro-subtitle {
+            font-size: 1.15rem;
+            font-weight: 400;
+            font-family: 'Lora', serif;
+            font-style: italic;
+            color: var(--text-dark);
+            opacity: 0.75;
+            margin-top: 2px;
+        }
+
+        .breath-divider {
+            width: 180px;
+            height: 30px;
+            margin: 32px auto 0 auto;
+            display: block;
+        }
+
+        .breath-divider path {
+            fill: none;
+            stroke: var(--primary-cozy);
+            stroke-linecap: round;
+        }
+
+        .breath-divider .line-main {
+            stroke-width: 1.5;
+            opacity: 0.55;
+        }
+
+        .breath-divider .line-echo {
+            stroke-width: 1;
+            opacity: 0.3;
+        }
+
+        .breath-divider .line-whisper {
+            stroke: var(--secondary-calm);
+            stroke-width: 1;
+            opacity: 0.25;
+        }
+
+        .breath-divider circle {
+            fill: var(--primary-cozy);
+            opacity: 0.45;
         }
 
         .card-panel {
@@ -72,7 +142,7 @@
 
        .hero-profile-box {
     width: 100%;
-    max-width: 700px;
+    max-width: 340px;
     margin: 0 auto 30px auto;
     aspect-ratio: 4 / 5;
     overflow: hidden;
@@ -173,7 +243,7 @@
 
         @media (max-width: 768px) {
             .main-wrapper { padding: 20px 15px 40px 15px; }
-            .hero-profile-box { aspect-ratio: 4 / 5; }
+            .hero-profile-box { aspect-ratio: 4 / 5; max-width: 100%; }
             .office-gallery { grid-template-columns: 1fr; }
             .gallery-img { height: 200px; }
             .price-item { flex-direction: column; gap: 4px; }
@@ -188,10 +258,21 @@
 <div class="main-wrapper">
 
     <header class="intro-block">
-        <h1 class="main-title">Ideje gyógyulni</h1>
-        <h2 style="font-size: 1.3rem; font-weight: 400; color: var(--secondary-calm); margin-top: 5px;">
-            Traumából, szorongásból, függőségből
+        <div class="title-wrap">
+            <span class="title-highlight echo"></span>
+            <span class="title-highlight"></span>
+            <h1 class="main-title">Ideje Gyógyulni</h1>
+        </div>
+        <h2 class="intro-subtitle">
+            Traumából, szorongásból, függőségből.
         </h2>
+        <svg class="breath-divider" viewBox="0 0 180 30" xmlns="http://www.w3.org/2000/svg">
+            <path class="line-whisper" d="M0 15 C 7 15, 7 22, 13 22 C 19 22, 19 8, 25 8 C 31 8, 31 22, 37 22 C 43 22, 43 8, 49 8 C 55 8, 55 22, 61 22 C 67 22, 67 8, 73 8 C 79 8, 79 22, 85 22 C 91 22, 91 15, 95 15" />
+            <path class="line-echo" d="M0 19 C 13 19, 13 26, 26 26 C 39 26, 39 8, 52 8 C 65 8, 65 22, 78 22 C 91 22, 91 6, 104 6 C 117 6, 117 24, 130 24 C 143 24, 143 15, 180 15" />
+            <path class="line-main" d="M0 15 C 13 15, 13 4, 26 4 C 39 4, 39 26, 52 26 C 65 26, 65 4, 78 4 C 91 4, 91 26, 104 26 C 117 26, 117 4, 130 4 C 143 4, 143 15, 180 15" />
+            <circle cx="2" cy="15" r="2" />
+            <circle cx="178" cy="15" r="2" />
+        </svg>
     </header>
 
     <div class="hero-profile-box">
