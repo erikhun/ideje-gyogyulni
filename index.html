@@ -44,6 +44,126 @@
             margin: 0 auto;
         }
 
+        .site-header {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: rgba(253, 251, 247, 0.9);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            border-bottom: 1px solid rgba(140, 106, 92, 0.14);
+        }
+
+        .site-header-inner {
+            max-width: 760px;
+            margin: 0 auto;
+            padding: 16px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .site-header .brand {
+            font-family: 'Lora', serif;
+            font-weight: 500;
+            font-size: 1.1rem;
+            color: var(--primary-cozy);
+            letter-spacing: -0.3px;
+        }
+
+        .site-header nav {
+            display: flex;
+            align-items: center;
+            gap: 26px;
+        }
+
+        .site-header nav a {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-size: 0.92rem;
+            color: var(--text-dark);
+            text-decoration: none;
+            opacity: 0.7;
+        }
+
+        .site-header nav a:hover {
+            opacity: 1;
+            color: var(--secondary-calm);
+        }
+
+        .site-header nav a.nav-cta {
+            opacity: 1;
+            color: var(--white);
+            background: var(--secondary-calm);
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-weight: 500;
+        }
+
+        .site-header nav a.nav-cta:hover {
+            background: #506154;
+            color: var(--white);
+        }
+
+        @media (max-width: 640px) {
+            .site-header-inner { padding: 13px 15px; }
+            .site-header .brand { font-size: 0.95rem; }
+            .site-header nav { gap: 14px; }
+            .site-header nav a { font-size: 0.82rem; }
+            .site-header nav a.nav-cta { padding: 7px 12px; }
+        }
+
+        .video-gallery {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 16px;
+            margin: 24px 0 22px 0;
+        }
+
+        .video-box {
+            aspect-ratio: 9 / 16;
+            background: var(--accent-soft);
+            border-radius: 12px;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .video-box video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-top: 6px;
+        }
+
+        .social-links a {
+            padding: 8px 18px;
+            border: 1px solid var(--primary-cozy);
+            border-radius: 20px;
+            color: var(--primary-cozy);
+            font-size: 0.88rem;
+            font-weight: 500;
+            text-decoration: none;
+        }
+
+        .social-links a:hover {
+            background: var(--primary-cozy);
+            color: var(--white);
+        }
+
+        @media (max-width: 640px) {
+            .video-gallery { gap: 10px; }
+        }
+
         .intro-block {
             text-align: center;
             padding: 56px 10px 42px 10px;
@@ -277,9 +397,20 @@
 
 <body>
 
+<header class="site-header">
+    <div class="site-header-inner">
+        <span class="brand">Ideje Gyógyulni</span>
+        <nav>
+            <a href="#rolam">Rólam</a>
+            <a href="#arak">Árak</a>
+            <a href="#kapcsolat" class="nav-cta">Kapcsolat</a>
+        </nav>
+    </div>
+</header>
+
 <div class="main-wrapper">
 
-    <header class="intro-block">
+    <div class="intro-block">
         <div class="title-wrap">
             <span class="title-highlight echo"></span>
             <span class="title-highlight"></span>
@@ -295,9 +426,9 @@
             <circle cx="2" cy="15" r="2" />
             <circle cx="178" cy="15" r="2" />
         </svg>
-    </header>
+    </div>
 
-    <div class="about-section">
+    <div class="about-section" id="rolam">
 
         <div class="hero-profile-box">
             <img src="erik1.jpg"
@@ -325,12 +456,56 @@
 
     </div>
 
+    <div class="card-panel" id="hogyan-dolgozom">
+        <h3 style="font-size: 1.4rem;">Hogyan dolgozom</h3>
+
+        <!-- TODO: replace this placeholder text with your own paragraphs about your approach and how healing happens -->
+        <p style="text-align: justify; margin-top: 14px;">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum euismod, nisi eget
+            consectetur sagittis, nisl nunc consectetur nisi, euismod aliquet nisi nisl eu nisl.
+            Sed euismod, nisi eget consectetur sagittis, nisl nunc consectetur nisi.
+        </p>
+        <p style="text-align: justify;">
+            Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat
+            nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui
+            officia deserunt mollit anim id est laborum.
+        </p>
+
+        <!-- TODO: replace video1.mp4/video2.mp4/video3.mp4 (and the matching poster images) with your own exported clips.
+             Keep each clip short and compressed (a few MB, not tens of MB) so the page stays fast. -->
+        <div class="video-gallery">
+            <div class="video-box">
+                <video controls playsinline preload="metadata" poster="video1-poster.jpg">
+                    <source src="video1.mp4" type="video/mp4">
+                </video>
+            </div>
+            <div class="video-box">
+                <video controls playsinline preload="metadata" poster="video2-poster.jpg">
+                    <source src="video2.mp4" type="video/mp4">
+                </video>
+            </div>
+            <div class="video-box">
+                <video controls playsinline preload="metadata" poster="video3-poster.jpg">
+                    <source src="video3.mp4" type="video/mp4">
+                </video>
+            </div>
+        </div>
+
+        <!-- TODO: replace the # hrefs below with your real TikTok / YouTube / Instagram / Facebook profile URLs -->
+        <div class="social-links">
+            <a href="#" target="_blank" rel="noopener">TikTok</a>
+            <a href="#" target="_blank" rel="noopener">YouTube</a>
+            <a href="#" target="_blank" rel="noopener">Instagram</a>
+            <a href="#" target="_blank" rel="noopener">Facebook</a>
+        </div>
+    </div>
+
     <div class="office-gallery">
         <img src="https://images.unsplash.com/photo-1527689368864-3a821dbccc34?auto=format&fit=crop&q=80&w=600" class="gallery-img">
         <img src="https://images.unsplash.com/photo-1519710164239-da123dc03ef4?auto=format&fit=crop&q=80&w=600" class="gallery-img">
     </div>
 
-    <div class="card-panel">
+    <div class="card-panel" id="arak">
         <h3 style="font-size: 1.4rem;">Árak</h3>
 
         <ul class="price-list">
@@ -349,7 +524,7 @@
         </ul>
     </div>
 
-    <div class="card-panel">
+    <div class="card-panel" id="kapcsolat">
         <h3 style="font-size: 1.4rem;">Kapcsolat</h3>
 
         <p style="font-size: 0.95rem; font-style: italic; margin-top: 0; margin-bottom: 22px; color: #666;">
