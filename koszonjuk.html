@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Köszönjük | Ideje Gyógyulni</title>
+
+    <!-- Plausible Analytics -->
+    <script defer data-domain="idejegyogyulni.hu" src="https://plausible.io/js/script.js"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --bg-warm: #FDFBF7;
+            --primary-cozy: #8C6A5C;
+            --secondary-calm: #607264;
+            --text-dark: #3A3330;
+            --accent-soft: #F3EDE4;
+            --white: #FFFFFF;
+        }
+
+        html, body {
+            background-color: var(--bg-warm);
+            color: var(--text-dark);
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            min-height: 100vh;
+        }
+
+        * { box-sizing: border-box; }
+
+        h1, h2 {
+            font-family: 'Lora', serif;
+            color: var(--primary-cozy);
+            font-weight: 500;
+            margin: 0;
+        }
+
+        .wrapper {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 30px 20px;
+        }
+
+        .thanks-card {
+            background: var(--white);
+            max-width: 460px;
+            width: 100%;
+            padding: 48px 36px;
+            border-radius: 16px;
+            box-shadow: 0 4px 24px rgba(140, 106, 92, 0.08);
+            text-align: center;
+        }
+
+        .check-icon {
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            background: var(--accent-soft);
+            color: var(--secondary-calm);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 22px auto;
+            font-size: 1.6rem;
+        }
+
+        .breath-divider {
+            width: 150px;
+            height: 24px;
+            margin: 18px auto 22px auto;
+            display: block;
+        }
+
+        .breath-divider path {
+            fill: none;
+            stroke-linecap: round;
+        }
+
+        .breath-divider .line-main {
+            stroke: var(--primary-cozy);
+            stroke-width: 1.5;
+            opacity: 0.55;
+        }
+
+        .breath-divider .line-echo {
+            stroke: var(--secondary-calm);
+            stroke-width: 1;
+            opacity: 0.3;
+        }
+
+        .breath-divider .line-whisper {
+            stroke: var(--secondary-calm);
+            stroke-width: 1;
+            opacity: 0.25;
+        }
+
+        .breath-divider circle {
+            fill: var(--primary-cozy);
+            opacity: 0.45;
+        }
+
+        h1 { font-size: 1.7rem; margin-bottom: 14px; }
+
+        p {
+            font-size: 1.02rem;
+            margin: 0 0 8px 0;
+        }
+
+        .back-link {
+            display: inline-block;
+            margin-top: 26px;
+            color: var(--white);
+            background: var(--secondary-calm);
+            text-decoration: none;
+            padding: 12px 26px;
+            border-radius: 20px;
+            font-weight: 500;
+            font-size: 0.98rem;
+        }
+
+        .back-link:hover {
+            background: #506154;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="wrapper">
+    <div class="thanks-card">
+        <div class="check-icon">✓</div>
+        <h1>Köszönöm az üzenetet!</h1>
+        <svg class="breath-divider" viewBox="0 0 180 30" xmlns="http://www.w3.org/2000/svg">
+            <path class="line-whisper" d="M0 15 C 7 15, 7 22, 13 22 C 19 22, 19 8, 25 8 C 31 8, 31 22, 37 22 C 43 22, 43 8, 49 8 C 55 8, 55 22, 61 22 C 67 22, 67 8, 73 8 C 79 8, 79 22, 85 22 C 91 22, 91 15, 95 15" />
+            <path class="line-echo" d="M0 19 C 13 19, 13 26, 26 26 C 39 26, 39 8, 52 8 C 65 8, 65 22, 78 22 C 91 22, 91 6, 104 6 C 117 6, 117 24, 130 24 C 143 24, 143 15, 180 15" />
+            <path class="line-main" d="M0 15 C 13 15, 13 4, 26 4 C 39 4, 39 26, 52 26 C 65 26, 65 4, 78 4 C 91 4, 91 26, 104 26 C 117 26, 117 4, 130 4 C 143 4, 143 15, 180 15" />
+            <circle cx="2" cy="15" r="2" />
+            <circle cx="178" cy="15" r="2" />
+        </svg>
+        <p>Megkaptam és egy napon belül válaszolok!</p>
+        <p>Üdv, Erik</p>
+        <a href="/" class="back-link">Vissza az oldalra</a>
+    </div>
+</div>
+
+</body>
+</html>
