@@ -112,29 +112,81 @@
             .site-header nav a.nav-cta { padding: 7px 12px; }
         }
 
-        .video-gallery {
+        .platform-grid {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 16px;
+            grid-template-columns: repeat(3, 1fr) 0.85fr;
+            gap: 14px;
             margin: 24px 0 22px 0;
+            align-items: stretch;
         }
 
-        .video-box {
-            aspect-ratio: 9 / 16;
+        .platform-card {
             background: var(--accent-soft);
             border-radius: 12px;
-            position: relative;
             overflow: hidden;
             display: flex;
-            align-items: center;
-            justify-content: center;
+            flex-direction: column;
         }
 
-        .video-box video {
+        .platform-card .platform-label {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 0.78rem;
+            font-weight: 500;
+            color: var(--primary-cozy);
+            padding: 10px 12px 6px 12px;
+        }
+
+        .platform-embed-wrap {
+            flex: 1;
+            min-height: 300px;
+            overflow: hidden;
+        }
+
+        .platform-embed-wrap iframe {
             width: 100%;
             height: 100%;
-            object-fit: cover;
+            min-height: 300px;
+            border: none;
             display: block;
+        }
+
+        .instagram-static {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 18px 10px;
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .instagram-static svg {
+            margin-bottom: 8px;
+        }
+
+        .instagram-static .ig-handle {
+            font-size: 0.82rem;
+            font-weight: 500;
+            color: var(--primary-cozy);
+        }
+
+        .instagram-static .ig-cta {
+            font-size: 0.72rem;
+            color: var(--text-dark);
+            opacity: 0.65;
+            margin-top: 3px;
+        }
+
+        @media (max-width: 900px) {
+            .platform-grid { grid-template-columns: 1fr 1fr; }
+        }
+
+        @media (max-width: 560px) {
+            .platform-grid { grid-template-columns: 1fr; }
         }
 
         .social-links {
@@ -158,10 +210,6 @@
         .social-links a:hover {
             background: var(--primary-cozy);
             color: var(--white);
-        }
-
-        @media (max-width: 640px) {
-            .video-gallery { gap: 10px; }
         }
 
         .intro-block {
@@ -528,25 +576,55 @@
             kifejezzük ami belólünk jön, amire szükségünk van.
         </p>
 
-        <!-- TODO: replace video1.mp4/video2.mp4/video3.mp4 (and the matching poster images) with your own exported clips.
-             Keep each clip short and compressed (a few MB, not tens of MB) so the page stays fast. -->
-        <div class="video-gallery">
-            <div class="video-box">
-                <video controls playsinline preload="metadata" poster="video1-poster.jpg">
-                    <source src="video1.mp4" type="video/mp4">
-                </video>
+        <!-- TikTok, YouTube, and Facebook all use your real handles/IDs - live and ready.
+             Instagram is a static card only (no live preview) - just links out to your profile. -->
+        <div class="platform-grid">
+
+            <div class="platform-card">
+                <div class="platform-label">
+                    <i class="ti ti-brand-tiktok" style="font-size:14px;" aria-hidden="true"></i> TikTok – legújabb videók
+                </div>
+                <div class="platform-embed-wrap">
+                    <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@hrmpli.erik" data-unique-id="hrmpli.erik" data-embed-type="creator" style="max-width: 780px; min-width: 288px;">
+                        <section>
+                            <a target="_blank" href="https://www.tiktok.com/@hrmpli.erik?refer=creator_embed" rel="noopener">@hrmpli.erik</a>
+                        </section>
+                    </blockquote>
+                </div>
             </div>
-            <div class="video-box">
-                <video controls playsinline preload="metadata" poster="video2-poster.jpg">
-                    <source src="video2.mp4" type="video/mp4">
-                </video>
+
+            <div class="platform-card">
+                <div class="platform-label">
+                    <i class="ti ti-brand-youtube" style="font-size:14px;" aria-hidden="true"></i> YouTube – legújabb feltöltés
+                </div>
+                <div class="platform-embed-wrap">
+                    <iframe src="https://www.youtube.com/embed/videoseries?list=UUa1EZBEEUWjSHJaLW-25b3Q" title="Legújabb YouTube videó" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
             </div>
-            <div class="video-box">
-                <video controls playsinline preload="metadata" poster="video3-poster.jpg">
-                    <source src="video3.mp4" type="video/mp4">
-                </video>
+
+            <div class="platform-card">
+                <div class="platform-label">
+                    <i class="ti ti-brand-facebook" style="font-size:14px;" aria-hidden="true"></i> Facebook – oldal
+                </div>
+                <div class="platform-embed-wrap">
+                    <iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fideje.gyogyulni&tabs=timeline&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=false" style="border:none; overflow:hidden;" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" title="Facebook oldal"></iframe>
+                </div>
             </div>
+
+            <div class="platform-card">
+                <a class="instagram-static" href="https://www.instagram.com/ideje.gyogyulni.horompoli.erik/" target="_blank" rel="noopener">
+                    <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#8C6A5C" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+                        <rect x="2" y="2" width="20" height="20" rx="5"></rect>
+                        <circle cx="12" cy="12" r="4"></circle>
+                        <circle cx="17.5" cy="6.5" r="1"></circle>
+                    </svg>
+                    <span class="ig-handle">@ideje.gyogyulni.horompoli.erik</span>
+                    <span class="ig-cta">Kövess Instagramon</span>
+                </a>
+            </div>
+
         </div>
+        <script async src="https://www.tiktok.com/embed.js"></script>
 
         <div class="social-links">
             <a href="https://www.tiktok.com/@hrmpli.erik" target="_blank" rel="noopener">TikTok</a>
