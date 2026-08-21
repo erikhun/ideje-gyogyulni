@@ -382,6 +382,53 @@
             background-color: #506154;
         }
 
+        .address-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 14px;
+        }
+
+        .address-card {
+            display: block;
+            background-color: var(--accent-soft);
+            border-radius: 12px;
+            padding: 16px 18px;
+            text-decoration: none;
+            color: inherit;
+            transition: background-color 0.2s ease, transform 0.2s ease;
+        }
+
+        .address-card:hover {
+            background-color: #E9E0D2;
+            transform: translateY(-1px);
+        }
+
+        .address-card .address-title {
+            display: flex;
+            align-items: center;
+            gap: 7px;
+            font-family: 'Lora', serif;
+            color: var(--primary-cozy);
+            font-weight: 500;
+            font-size: 1rem;
+            margin-bottom: 6px;
+        }
+
+        .address-card .address-title svg {
+            flex-shrink: 0;
+        }
+
+        .address-card .address-lines {
+            font-size: 0.88rem;
+            color: var(--text-dark);
+            opacity: 0.85;
+            line-height: 1.5;
+        }
+
+        @media (max-width: 640px) {
+            .address-grid { grid-template-columns: 1fr; gap: 10px; }
+        }
+
         @media (max-width: 768px) {
             .main-wrapper { padding: 20px 15px 40px 15px; }
             .hero-profile-box { aspect-ratio: 4 / 5; max-width: 100%; flex: 1 1 auto; }
@@ -402,6 +449,7 @@
         <span class="brand">Ideje Gyógyulni</span>
         <nav>
             <a href="#rolam">Rólam</a>
+            <a href="#helyszinek">Helyszínek</a>
             <a href="#arak">Árak</a>
             <a href="#kapcsolat" class="nav-cta">Kapcsolat</a>
         </nav>
@@ -511,6 +559,37 @@
     <div class="office-gallery">
         <img src="https://images.unsplash.com/photo-1527689368864-3a821dbccc34?auto=format&fit=crop&q=80&w=600" class="gallery-img">
         <img src="https://images.unsplash.com/photo-1519710164239-da123dc03ef4?auto=format&fit=crop&q=80&w=600" class="gallery-img">
+    </div>
+
+    <div class="card-panel" id="helyszinek">
+        <h3 style="font-size: 1.4rem;">Helyszínek</h3>
+
+        <p style="font-size: 0.95rem; font-style: italic; margin-top: 0; margin-bottom: 18px; color: #666;">
+            Az alábbi két helyszínen fogadom klienseimet. Kattints a címre a térképhez.
+        </p>
+
+        <div class="address-grid">
+            <a class="address-card" href="https://www.google.com/maps/search/?api=1&query=D%C3%B3zsa+Gy%C3%B6rgy+%C3%BAt+138-142%2C+1134+Budapest" target="_blank" rel="noopener">
+                <span class="address-title">
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"></path>
+                        <circle cx="12" cy="10" r="3"></circle>
+                    </svg>
+                    Budapest XIII. kerület – Újlipótváros
+                </span>
+                <span class="address-lines">Dózsa György út 138-142.<br>1134 Budapest</span>
+            </a>
+            <a class="address-card" href="https://www.google.com/maps/search/?api=1&query=%C3%9Clloi+%C3%BAt+206%2C+1191+Budapest" target="_blank" rel="noopener">
+                <span class="address-title">
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"></path>
+                        <circle cx="12" cy="10" r="3"></circle>
+                    </svg>
+                    Budapest XIX. kerület – Kispest
+                </span>
+                <span class="address-lines">Üllői út 206.<br>1191 Budapest</span>
+            </a>
+        </div>
     </div>
 
     <div class="card-panel" id="arak">
