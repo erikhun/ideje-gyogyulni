@@ -190,29 +190,6 @@
             .platform-grid { grid-template-columns: 1fr; }
         }
 
-        .social-links {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 12px;
-            margin-top: 6px;
-        }
-
-        .social-links a {
-            padding: 8px 18px;
-            border: 1px solid var(--primary-cozy);
-            border-radius: 20px;
-            color: var(--primary-cozy);
-            font-size: 0.88rem;
-            font-weight: 500;
-            text-decoration: none;
-        }
-
-        .social-links a:hover {
-            background: var(--primary-cozy);
-            color: var(--white);
-        }
-
         .intro-block {
             text-align: center;
             padding: 8px 10px 18px 10px;
@@ -371,6 +348,15 @@
             margin-bottom: 16px;
             padding-left: 25px;
             position: relative;
+        }
+
+        .help-list li strong {
+            display: block;
+            margin-bottom: 2px;
+        }
+
+        .help-list li span {
+            display: block;
             text-align: justify;
         }
 
@@ -546,11 +532,11 @@
             <h3 style="font-size: 1.4rem;">Miben tudok segíteni?</h3>
             
             <ul class="help-list">
-                <li><strong>Traumafeldolgozás</strong> – Múltbeli megrázkódtatások, elakadások feloldása.</li>
-                <li><strong>Kapcsolati, párkapcsolati konfliktusok</strong> – Ismétlődő viták, nem működő kapcsolatok okainak felfedezése.</li>
-                <li><strong>Élethelyzeti nehézségek</strong> – Krízisek, veszteségek és gyász feldolgozása.</li>
-                <li><strong>Függőség</strong> – Káros minták és viselkedések kezelése.</li>
-                <li><strong>Szorongás</strong> – Túlgondolás és állandó aggodalom enyhítése.</li>
+                <li><strong>Traumafeldolgozás</strong><span>Múltbeli megrázkódtatások, elakadások feloldása.</span></li>
+                <li><strong>Kapcsolati, párkapcsolati konfliktusok</strong><span>Ismétlődő viták, nem működő kapcsolatok okainak felfedezése.</span></li>
+                <li><strong>Élethelyzeti nehézségek</strong><span>Krízisek, veszteségek és gyász feldolgozása.</span></li>
+                <li><strong>Függőség</strong><span>Káros minták és viselkedések kezelése.</span></li>
+                <li><strong>Szorongás</strong><span>Túlgondolás és állandó aggodalom enyhítése.</span></li>
             </ul>
         </div>
 
@@ -586,7 +572,12 @@
 
             <div class="platform-card">
                 <div class="platform-label">
-                    <i class="ti ti-brand-tiktok" style="font-size:14px;" aria-hidden="true"></i> TikTok – legújabb videók
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="7" cy="18" r="3"></circle>
+                        <circle cx="17" cy="15" r="3"></circle>
+                        <path d="M10 18V4a5 5 0 0 0 5 5v2"></path>
+                    </svg>
+                    TikTok
                 </div>
                 <div class="platform-embed-wrap">
                     <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@hrmpli.erik" data-unique-id="hrmpli.erik" data-embed-type="creator" style="max-width: 780px; min-width: 288px;">
@@ -599,7 +590,11 @@
 
             <div class="platform-card">
                 <div class="platform-label">
-                    <i class="ti ti-brand-youtube" style="font-size:14px;" aria-hidden="true"></i> YouTube – legújabb Short
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+                        <rect x="2" y="6" width="20" height="12" rx="4"></rect>
+                        <path d="M10.5 9.5l4.5 2.5-4.5 2.5v-5Z"></path>
+                    </svg>
+                    YouTube
                 </div>
                 <div class="platform-embed-wrap">
                     <iframe src="https://www.youtube.com/embed/videoseries?list=UUSHa1EZBEEUWjSHJaLW-25b3Q" title="Legújabb YouTube Shorts" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
@@ -608,7 +603,11 @@
 
             <div class="platform-card">
                 <div class="platform-label">
-                    <i class="ti ti-brand-facebook" style="font-size:14px;" aria-hidden="true"></i> Facebook – oldal
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="9"></circle>
+                        <path d="M14 8.5h-1.5A1.5 1.5 0 0 0 11 10v1.5H9M11 21v-9.5"></path>
+                    </svg>
+                    Facebook
                 </div>
                 <div class="platform-embed-wrap">
                     <iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fideje.gyogyulni&tabs=timeline&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=false" style="border:none; overflow:hidden;" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" title="Facebook oldal"></iframe>
@@ -616,6 +615,14 @@
             </div>
 
             <div class="platform-card">
+                <div class="platform-label">
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+                        <rect x="2" y="2" width="20" height="20" rx="5"></rect>
+                        <circle cx="12" cy="12" r="4"></circle>
+                        <circle cx="17.5" cy="6.5" r="1"></circle>
+                    </svg>
+                    Instagram
+                </div>
                 <a class="instagram-static" href="https://www.instagram.com/ideje.gyogyulni.horompoli.erik/" target="_blank" rel="noopener">
                     <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#8C6A5C" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
                         <rect x="2" y="2" width="20" height="20" rx="5"></rect>
@@ -629,13 +636,6 @@
 
         </div>
         <script async src="https://www.tiktok.com/embed.js"></script>
-
-        <div class="social-links">
-            <a href="https://www.tiktok.com/@hrmpli.erik" target="_blank" rel="noopener">TikTok</a>
-            <a href="https://www.youtube.com/@horompolierik3590/shorts" target="_blank" rel="noopener">YouTube</a>
-            <a href="https://www.instagram.com/ideje.gyogyulni.horompoli.erik/" target="_blank" rel="noopener">Instagram</a>
-            <a href="https://www.facebook.com/ideje.gyogyulni" target="_blank" rel="noopener">Facebook</a>
-        </div>
     </div>
 
     <div class="office-gallery">
