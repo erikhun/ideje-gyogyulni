@@ -69,6 +69,7 @@
             font-size: 1.1rem;
             color: var(--primary-cozy);
             letter-spacing: -0.3px;
+            text-decoration: none;
         }
 
         .site-header nav {
@@ -477,6 +478,10 @@
             .address-grid { grid-template-columns: 1fr; gap: 10px; }
         }
 
+        #rolam, #helyszinek, #arak, #kapcsolat {
+            scroll-margin-top: 90px;
+        }
+
         @media (max-width: 768px) {
             .main-wrapper { padding: 20px 15px 40px 15px; }
             .hero-profile-box { aspect-ratio: 4 / 5; max-width: 100%; flex: 1 1 auto; }
@@ -494,9 +499,8 @@
 
 <header class="site-header">
     <div class="site-header-inner">
-        <span class="brand">Ideje Gyógyulni</span>
+        <a href="/" class="brand">Ideje Gyógyulni</a>
         <nav>
-            <a href="#rolam">Rólam</a>
             <a href="#helyszinek">Helyszínek</a>
             <a href="#arak">Árak</a>
             <a href="#kapcsolat" class="nav-cta">Kapcsolat</a>
